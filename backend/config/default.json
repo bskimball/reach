@@ -1,0 +1,51 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "./public",
+  "origins": [
+    "http://localhost:3030",
+    "http://localhost:5173",
+    "https://poc.lam.bdkcloud.com"
+  ],
+  "paginate": {
+    "default": 100,
+    "max": 200
+  },
+  "mysql": {
+    "client": "mysql",
+    "connection": {
+      "host": "127.0.0.1",
+      "port": 3306,
+      "user": "reach",
+      "password": "reach",
+      "database": "reach"
+    }
+  },
+  "authentication": {
+    "entity": "user",
+    "service": "users",
+    "secret": "WYFBDQSEvJ2HLckAvi9AEvKuVTV6FMmj",
+    "authStrategies": [
+      "jwt",
+      "local"
+    ],
+    "jwtOptions": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": ["http://localhost:5173", "http://localhost:3030", "https://poc.lam.bdkcloud.com"],
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "usernameField": "email",
+      "passwordField": "password"
+    },
+    "oauth": {
+      "google": {
+        "key": "970873045609-ghch4a8qambt9sqpg21aasgtjdej2ad2.apps.googleusercontent.com",
+        "secret": "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"
+      }
+    }
+  }
+}

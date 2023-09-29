@@ -1,0 +1,12 @@
+{
+  "mysql": {
+    "client": "mysql",
+    "connection": {
+      "host": "db",
+      "port": 3306,
+      "user": "reach",
+      "password": "reach",
+      "database": "reach"
+    }
+  }
+}
